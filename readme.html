@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Dillinger.md</title><style></style></head><body id="preview">
+<h1 class="code-line" data-line-start=0 data-line-end=1><a id="Flight_Simulator_0"></a>Flight Simulator</h1>
+<p class="has-line-data" data-line-start="3" data-line-end="6">i used swagger-ui to document the controllers, so you can just go to localhost:8080/swagger-ui.html to see the endpoints and trigger them with example values.<br>
+building and running is straightforward cause of the spring-boot:<br>
+you can just to into to root dir of project and create a jar with</p>
+<pre><code class="has-line-data" data-line-start="7" data-line-end="9" class="language-sh">$ mvn package
+</code></pre>
+<p class="has-line-data" data-line-start="9" data-line-end="10">and then run the application with</p>
+<pre><code class="has-line-data" data-line-start="11" data-line-end="13" class="language-sh">$ java -jar ./target/flight-simulator-<span class="hljs-number">1.0</span>-SNAPSHOT.jar
+</code></pre>
+<p class="has-line-data" data-line-start="14" data-line-end="16">Here’s my relation schema:<br>
+<img src="./entity-relation-schema.png" alt="entity-relation schema"></p>
+<p class="has-line-data" data-line-start="17" data-line-end="18">Since i’m using embedded h2 db, i changed the h2 property to in-memory db , so you can run the app, but if you like to persist your data , just change the jpa.url in the application.yml</p>
+<p class="has-line-data" data-line-start="20" data-line-end="21">After running the application.</p>
+<ul>
+<li class="has-line-data" data-line-start="21" data-line-end="22">to purchase a ticket, first you must create a company, then at least two airports</li>
+<li class="has-line-data" data-line-start="22" data-line-end="23">after tese you need to create a route (requires dest and arrival airports)</li>
+<li class="has-line-data" data-line-start="23" data-line-end="24">then, a flight that relates to a company and a route.</li>
+<li class="has-line-data" data-line-start="24" data-line-end="25">now, you can make a purchase</li>
+<li class="has-line-data" data-line-start="25" data-line-end="26">ps: you should not create tickets via ticket-controller</li>
+</ul>
+</body></html>
